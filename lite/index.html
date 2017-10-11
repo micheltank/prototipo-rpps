@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>AMXPrev - Gestão de RPPS</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+    <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <!--This page css - Morris CSS -->
+    <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/card.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="css/morris.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="scroll-sidebar" style="overflow: hidden; width: auto; height: 100%;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">Menu</li>
+                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Cadastros</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fundos.html">Fundos</a></li>
+                                <li><a href="pages-error-404.html">Clientes</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Operações</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="pages-error-404.html">Aplicações/Resgates (APR)</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Análises</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="pages-error-404.html">Rentabilidade/Risco</a></li>
+                                <li><a href="tipologia.html">Tipologia</a></li>
+                                <li><a href="enquadramento.html">Enquadramento</a></li>
+                                <li><a href="pages-error-404.html">Fundo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div><div class="slimScrollBar" style="background: rgb(220, 220, 220); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; left: 1px; height: 212.499px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; left: 1px;"></div></div>
+            <!-- End Sidebar scroll-->
+            <!-- Bottom points-->
+            <div class="sidebar-footer">
+                <!-- item--><a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Sair"><i class="mdi mdi-power"></i></a> </div>
+            <!-- End Bottom points-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor">Dashboard</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Início</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round round-lg align-self-center round-info"><i class="ti-wallet"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <h3 class="m-b-0 font-light">0,60% a.m.</h3>
+                                        <h5 class="text-muted m-b-0">CDI</h5></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round round-lg align-self-center round-warning"><i class="mdi mdi-cellphone-link"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <h3 class="m-b-0 font-lgiht">0,80% a.m</h3>
+                                        <h5 class="text-muted m-b-0">IBOVESPA</h5></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round round-lg align-self-center round-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <h3 class="m-b-0 font-lgiht">0,15% a.m.</h3>
+                                        <h5 class="text-muted m-b-0">IPCA</h5></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <div class="round round-lg align-self-center round-danger"><i class="mdi mdi-bullseye"></i></div>
+                                    <div class="m-l-10 align-self-center">
+                                        <h3 class="m-b-0 font-lgiht">0,09% a.m.</h3>
+                                        <h5 class="text-muted m-b-0">INPC</h5></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- end row indicators -->
+                <!-- start row pl -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-md-5">
+                        <div class="card">
+                            <div class="card-block">
+                                <h3 class="card-title">Composição da carteira</h3>
+                                <h6 class="card-subtitle">Por tipo de aplicação</h6>
+                                <div id="visitor" style="height:290px; width:100%;"></div>
+                            </div>
+                            <div>
+                                <hr class="m-t-0 m-b-0">
+                            </div>
+                            <div class="card-block text-center ">
+                                <ul class="list-inline m-b-0">
+                                    <li>
+                                        <h6 style="color: #745af2"><i class="fa fa-circle font-10 m-r-10 "></i>Renda fixa</h6> </li>
+                                    <li>
+                                        <h6 style="color: #26c6da;"><i class="fa fa-circle font-10 m-r-10"></i>Renda variável</h6> </li>
+                                    <li>
+                                        <h6 style="color: #1e88e5"><i class="fa fa-circle font-10 m-r-10"></i>Imóveis</h6> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Patrimônio Líquido</h3>
+                                        <h6 class="card-subtitle">Performance anual</h6> 
+                                    </div>
+                                    <div class="ml-auto align-self-center">
+                                        <ul class="list-inline m-b-0">
+                                            <li>
+                                                <h6 class="text-muted text-success"><i class="fa fa-circle font-10 m-r-10 "></i>2015</h6> </li>
+                                            <li>
+                                                <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>2016</h6> </li>
+                                                <li>
+                                                    <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10"></i>2017</h6> </li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div> 
+                                <div class="campaign ct-charts"><div class="chartist-tooltip" style="top: 115px; left: 320.344px;"></div><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width= "100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="30" x2="30" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="116.046875" x2="116.046875" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="202.09375" x2="202.09375" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="288.140625" x2="288.140625" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="374.1875" x2="374.1875" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="460.234375" x2="460.234375" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="546.28125" x2="546.28125" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line x1="632.328125" x2="632.328125" y1="15" y2="245" class="ct-grid ct-horizontal"></line><line y1="245" y2="245" x1="30" x2="632.328125" class="ct-grid ct-vertical"></line><line y1="168.33333333333331" y2="168.33333333333331" x1="30" x2="632.328125" class="ct-grid ct-vertical"></line><line y1="91.66666666666666" y2="91.66666666666666" x1="30" x2="632.328125" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="30" x2="632.328125" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 30 245 L 30 245 C 44.341 238.611 87.365 214.333 116.047 206.667 C 144.729 199 173.411 202.833 202.094 199 C 230.776 195.167 259.458 207.944 288.141 183.667 C 316.823 159.389 345.505 54.611 374.188 53.333 C 402.87 52.056 431.552 154.278 460.234 176 C 488.917 197.722 517.599 202.833 546.281 183.667 C 574.964 164.5 617.987 81.444 632.328 61 L 632.328 245 Z" class="ct-area" x1="NaN"></path><path d="M 30 245 C 44.341 238.611 87.365 214.333 116.047 206.667 C 144.729 199 173.411 202.833 202.094 199 C 230.776 195.167 259.458 207.944 288.141 183.667 C 316.823 159.389 345.505 54.611 374.188 53.333 C 402.87 52.056 431.552 154.278 460.234 176 C 488.917 197.722 517.599 202.833 546.281 183.667 C 574.964 164.5 617.987 81.444 632.328 61" class="ct-line"></path><line x1="30" y1="245" x2="30.01" y2="245" class="ct-point" value="0"></line><line x1="116.046875" y1="206.66666666666666" x2="116.056875" y2="206.66666666666666" class="ct-point" value="5"></line><line x1="202.09375" y1="199" x2="202.10375" y2="199" class="ct-point" value="6"></line><line x1="288.140625" y1="183.66666666666666" x2="288.150625" y2="183.66666666666666" class="ct-point" value="8"></line><line x1="374.1875" y1="53.33333333333334" x2="374.1975" y2="53.33333333333334" class="ct-point" value="25"></line><line x1="460.234375" y1="176" x2="460.244375" y2="176" class="ct-point" value="9"></line><line x1="546.28125" y1="183.66666666666666" x2="546.29125" y2="183.66666666666666" class="ct-point" value="8"></line><line x1="632.328125" y1="61" x2="632.338125" y2="61" class="ct-point" value="24"></line></g><g class="ct-series ct-series-b"><path d="M 30 245 L 30 245 C 44.341 241.167 87.365 223.278 116.047 222 C 144.729 220.722 173.411 236.056 202.094 237.333 C 230.776 238.611 259.458 238.611 288.141 229.667 C 316.823 220.722 345.505 182.389 374.188 183.667 C 402.87 184.944 431.552 233.5 460.234 237.333 C 488.917 241.167 517.599 206.667 546.281 206.667 C 574.964 206.667 617.987 232.222 632.328 237.333 L 632.328 245 Z" class="ct-area" x1="NaN"></path><path d="M 30 245 C 44.341 241.167 87.365 223.278 116.047 222 C 144.729 220.722 173.411 236.056 202.094 237.333 C 230.776 238.611 259.458 238.611 288.141 229.667 C 316.823 220.722 345.505 182.389 374.188 183.667 C 402.87 184.944 431.552 233.5 460.234 237.333 C 488.917 241.167 517.599 206.667 546.281 206.667 C 574.964 206.667 617.987 232.222 632.328 237.333" class="ct-line"></path><line x1="30" y1="245" x2="30.01" y2="245" class="ct-point" value="0"></line><line x1="116.046875" y1="222" x2="116.056875" y2="222" class="ct-point" value="3"></line><line x1="202.09375" y1="237.33333333333334" x2="202.10375" y2="237.33333333333334" class="ct-point" value="1"></line><line x1="288.140625" y1="229.66666666666666" x2="288.150625" y2="229.66666666666666" class="ct-point" value="2"></line><line x1="374.1875" y1="183.66666666666666" x2="374.1975" y2="183.66666666666666" class="ct-point" value="8"></line><line x1="460.234375" y1="237.33333333333334" x2="460.244375" y2="237.33333333333334" class="ct-point" value="1"></line><line x1="546.28125" y1="206.66666666666666" x2="546.29125" y2="206.66666666666666" class="ct-point" value="5"></line><line x1="632.328125" y1="237.33333333333334" x2="632.338125" y2="237.33333333333334" class="ct-point" value="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="30" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">1</span></foreignObject><foreignObject style="overflow: visible;" x="116.046875" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">2</span></foreignObject><foreignObject style="overflow: visible;" x="202.09375" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">3</span></foreignObject><foreignObject style="overflow: visible;" x="288.140625" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">4</span></foreignObject><foreignObject style="overflow: visible;" x="374.1875" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">5</span></foreignObject><foreignObject style="overflow: visible;" x="460.234375" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">6</span></foreignObject><foreignObject style="overflow: visible;" x="546.28125" y="250" width="86.046875" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 86px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">7</span></foreignObject><foreignObject style="overflow: visible;" x="632.328125" y="250" width="30" height="20"><span class="ct-label ct-horizontal ct-end" style="width: 30px; height: 20px" xmlns="http://www.w3.org/2000/xmlns/">8</span></foreignObject><foreignObject style="overflow: visible;" y="168.33333333333331" x="10" height="76.66666666666667" width="10"><span class="ct-label ct-vertical ct-start" style="height: 77px; width: 10px" xmlns="http://www.w3.org/2000/xmlns/">0k</span></foreignObject><foreignObject style="overflow: visible;" y="91.66666666666664" x="10" height="76.66666666666667" width="10"><span class="ct-label ct-vertical ct-start" style="height: 77px; width: 10px" xmlns="http://www.w3.org/2000/xmlns/">10k</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="76.66666666666666" width="10"><span class="ct-label ct-vertical ct-start" style="height: 77px; width: 10px" xmlns="http://www.w3.org/2000/xmlns/">20k</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="10"><span class="ct-label ct-vertical ct-start" style="height: 30px; width: 10px" xmlns="http://www.w3.org/2000/xmlns/">30k</span></foreignObject></g><defs><linearGradient id="gradient" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="rgba(255, 255, 255, 1)"></stop><stop offset="1" stop-color="rgba(38, 198, 218, 1)"></stop></linearGradient></defs></svg></div>
+                                <div class="row text-center">
+                                    <div class="col-lg-4 col-md-4 m-t-20"><h1 class="m-b-0 font-light">2015</h1><small>R$ 42.984.658,25</small></div>
+                                    <div class="col-lg-4 col-md-4 m-t-20"><h1 class="m-b-0 font-light">2016</h1><small>R$ 48.349.354,18</small></div>
+                                    <div class="col-lg-4 col-md-4 m-t-20"><h1 class="m-b-0 font-light">2017</h1><small>R$ 60.118.268,9</small></div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </div>
+                <!-- end row pl -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Rendimento acumulado</h4>
+                                <div id="yieldChart" style="height: 250px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column --> 
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Meta acumulada ano</h4>
+                                <h6 class="card-subtitle">IPCA + 6%</h6>
+                                <div id="goalChart" style="height: 250px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+                <!-- Row -->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> © 2017 Developed by Michel Tank </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!-- chartist chart -->
+    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/plugins/d3/d3.min.js"></script>
+    <script src="../assets/plugins/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="js/dashboard1.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/raphael-min.js"></script>
+    <script src="js/morris.min.js"></script>
+
+    
+<script>
+        new Morris.Line({
+      // ID of the element in which to draw the chart.
+      element: 'yieldChart',
+      // Chart data records -- each entry in this array corresponds to a point on
+      // the chart.
+      data: [
+        { year: '2017 Q1', value: 52681268 },
+        { year: '2017 Q2', value: 55164951 },
+        { year: '2017 Q3', value: 58118052 }
+      ],
+      // The name of the data record attribute that contains x-values.
+      xkey: 'year',
+      // A list of names of data record attributes that contain y-values.
+      ykeys: ['value'],
+      // Labels for the ykeys -- will be displayed when you hover over the
+      // chart.
+      labels: ['Valor'],
+      preUnits: 'R$'
+    });
+    new Morris.Line({
+      // ID of the element in which to draw the chart.
+      element: 'goalChart',
+      // Chart data records -- each entry in this array corresponds to a point on
+      // the chart.
+      data: [
+        { year: '2017 Q1', value: 2 },
+        { year: '2017 Q2', value: 3.5 },
+        { year: '2017 Q3', value: 6 }
+      ],
+      // The name of the data record attribute that contains x-values.
+      xkey: 'year',
+      // A list of names of data record attributes that contain y-values.
+      ykeys: ['value'],
+      // Labels for the ykeys -- will be displayed when you hover over the
+      // chart.
+      labels: ['Valor'],
+      postUnits: '%'
+    });
+    </script>
+    <script src="./files/jquery.min.js.download"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="./files/popper.min.js.download"></script>
+    <script src="./files/bootstrap.min.js.download"></script>    
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="./files/jquery.slimscroll.js.download"></script>
+    <!--Menu sidebar -->
+    <script src="./files/sidebarmenu.js.download"></script>
+    <!--stickey kit -->
+    <script src="./files/sticky-kit.min.js.download"></script>
+    <script src="./files/jquery.sparkline.min.js.download"></script>
+
+</body>
+
+</html>
+

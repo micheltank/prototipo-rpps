@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>AMXPrev - Gestão de RPPS</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo text --><span>
+                         
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a>                            </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>                                </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="scroll-sidebar" style="overflow: hidden; width: auto; height: 100%;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">Menu</li>
+                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-laptop-windows"></i><span class="hide-menu">Cadastros</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="fundos.html">Fundos</a></li>
+                                <li><a href="pages-error-404.html">Clientes</a></li>                            
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span class="hide-menu">Operações</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="pages-error-404.html">Movimentar título (APR)</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Análises</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="pages-error-404.html">Rentabilidade/Risco</a></li>
+                                <li><a href="tipologia.html">Tipologia</a></li>
+                                <li><a href="enquadramento.html">Enquadramento</a></li>
+                                <li><a href="pages-error-404.html">Fundo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div><div class="slimScrollBar" style="background: rgb(220, 220, 220); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; left: 1px; height: 212.499px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; left: 1px;"></div></div>
+            <!-- End Sidebar scroll-->
+            <!-- Bottom points-->
+            <div class="sidebar-footer">
+                <!-- item--><a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Sair"><i class="mdi mdi-power"></i></a> </div>
+            <!-- End Bottom points-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">Enquadramento</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Início</a></li>
+                            <li class="breadcrumb-item active">Enquadramento</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-material m-t-40" style="padding: 20px">
+                                    <h4 class="card-title">Renda Fixa</h4>
+                                    <div class="table-responsive m-t-40">
+                                        <table id="tableRendaFixa" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Artigo</th>
+                                                    <th>Resolução %</th>
+                                                    <th>Valor em carteira</th>
+                                                    <th>Perc. em carteira</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Artigo</th>
+                                                    <th>Resolução %</th>
+                                                    <th>Valor em carteira</th>
+                                                    <th>Perc. em carteira</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso I, Alínea "a"</td>
+                                                    <td>100,00%</td>
+                                                    <td>R$ 50.000.000,00</td>
+                                                    <td>50,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso I, Alínea "b"</td>
+                                                    <td>100,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso III, Alínea "a"</td>
+                                                    <td>80,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso IV, Alínea "a"</td>
+                                                    <td>30,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso VI</td>
+                                                    <td>15,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso VII, Alínea "a"</td>
+                                                    <td>5,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr style="background-color:#FF6347">
+                                                    <td>Artigo 7°, Inciso VII, Alínea "b"</td>
+                                                    <td>5,00%</td>
+                                                    <td>R$ 10.000.000,00</td>
+                                                    <td>10,00%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-material m-t-40" style="padding: 20px">
+                                    <h4 class="card-title">Renda Variável</h4>
+                                    <div class="table-responsive m-t-40">
+                                        <table id="tableVariavel" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Artigo</th>
+                                                    <th>Resolução %</th>
+                                                    <th>Valor em carteira</th>
+                                                    <th>Perc. em carteira</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Artigo</th>
+                                                    <th>Resolução %</th>
+                                                    <th>Valor em carteira</th>
+                                                    <th>Perc. em carteira</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso I, Alínea "a"</td>
+                                                    <td>100,00%</td>
+                                                    <td>R$ 50.000.000,00</td>
+                                                    <td>50,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso I, Alínea "b"</td>
+                                                    <td>100,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso III, Alínea "a"</td>
+                                                    <td>80,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso IV, Alínea "a"</td>
+                                                    <td>30,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso VI</td>
+                                                    <td>15,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Artigo 7°, Inciso VII, Alínea "a"</td>
+                                                    <td>5,00%</td>
+                                                    <td>R$ 0,00</td>
+                                                    <td>0,00%</td>
+                                                </tr>
+                                                <tr style="background-color:#FF6347">
+                                                    <td>Artigo 7°, Inciso VII, Alínea "b"</td>
+                                                    <td>5,00%</td>
+                                                    <td>R$ 10.000.000,00</td>
+                                                    <td>10,00%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2017 Developed by Michel Tank
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!-- This is data table -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+            $(document).ready(function () {
+                var table = $('#example').DataTable({
+                    "columnDefs": [{
+                        "visible": false,
+                        "targets": 2
+                    }],
+                    "order": [
+                        [2, 'asc']
+                    ],
+                    "displayLength": 25,
+                    "drawCallback": function (settings) {
+                        var api = this.api();
+                        var rows = api.rows({
+                            page: 'current'
+                        }).nodes();
+                        var last = null;
+                        api.column(2, {
+                            page: 'current'
+                        }).data().each(function (group, i) {
+                            if (last !== group) {
+                                $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                                last = group;
+                            }
+                        });
+                    }
+                });
+                // Order by the grouping
+                $('#example tbody').on('click', 'tr.group', function () {
+                    var currentOrder = table.order()[0];
+                    if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                        table.order([2, 'desc']).draw();
+                    } else {
+                        table.order([2, 'asc']).draw();
+                    }
+                });
+            });
+        });
+        $('#tableRendaFixa').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                { extend: 'copy', text: 'Copiar' },
+                { extend: 'csv', text: 'CSV' },
+                { extend: 'excel', text: 'Excel' },
+                { extend: 'pdf', text: 'PDF' },
+                { extend: 'print', text: 'Imprimir' }
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Display _MENU_ records per page",
+                "sZeroRecords": "Nothing found - sorry",
+                "sInfo": "Exibindo _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Exibindo 0 até 0 de 0 registros",
+                "sInfoFiltered": "(filtered from _MAX_ total records)"
+            }
+        });
+        $('#tableRendaFixa_filter label').contents().eq(0).replaceWith('Pesquisar');
+        $('#tableRendaFixa_previous').contents().eq(0).replaceWith('Anterior');
+        $('#tableRendaFixa_next').contents().eq(0).replaceWith('Próximo');
+
+        $('#tableVariavel').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                { extend: 'copy', text: 'Copiar' },
+                { extend: 'csv', text: 'CSV' },
+                { extend: 'excel', text: 'Excel' },
+                { extend: 'pdf', text: 'PDF' },
+                { extend: 'print', text: 'Imprimir' }
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Display _MENU_ records per page",
+                "sZeroRecords": "Nothing found - sorry",
+                "sInfo": "Exibindo _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Exibindo 0 até 0 de 0 registros",
+                "sInfoFiltered": "(filtered from _MAX_ total records)"
+            }
+        });
+        $('#tableVariavel_filter label').contents().eq(0).replaceWith('Pesquisar');
+        $('#tableVariavel_previous').contents().eq(0).replaceWith('Anterior');
+        $('#tableVariavel_next').contents().eq(0).replaceWith('Próximo');
+    </script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <script src="js/jQuery.style.switcher.js"></script>
+</body>
+
+</html>
