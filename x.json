@@ -1,0 +1,148 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "User Data API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "email",
+      "description": "Operations related to email registration and validation"
+    }
+  ],
+  "paths": {
+    "/auth/user-data/health-check": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/user-data/v1/email": {
+      "put": {
+        "tags": [
+          "email"
+        ],
+        "summary": "Update email",
+        "requestBody": {
+          "description": "Updated email object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Email updated"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "email"
+        ],
+        "summary": "Create email",
+        "requestBody": {
+          "description": "Created email object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmailInsert"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Email created"
+          }
+        }
+      }
+    },
+    "/auth/user-data/v1/email/{email}": {
+      "delete": {
+        "tags": [
+          "email"
+        ],
+        "summary": "Delete email",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Email deleted"
+          }
+        }
+      }
+    },
+    "/auth/user-data/v1/email/{email}/exists": {
+      "get": {
+        "tags": [
+          "email"
+        ],
+        "summary": "Check if email exists",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Email exists"
+          },
+          "404": {
+            "description": "Email not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EmailInsert": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "pattern": "\\S",
+            "type": "string",
+            "nullable": false
+          }
+        }
+      },
+      "EmailUpdate": {
+        "type": "object",
+        "properties": {
+          "newEmail": {
+            "pattern": "\\S",
+            "type": "string",
+            "nullable": false
+          },
+          "oldEmail": {
+            "pattern": "\\S",
+            "type": "string",
+            "nullable": false
+          }
+        }
+      }
+    }
+  }
+}
